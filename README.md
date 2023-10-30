@@ -1,4 +1,4 @@
-short-activist-pred
+short-activists-pred
 ===================
 
 Here is a sample README file for a Python package that provides predictions on short activist report success:
@@ -11,7 +11,7 @@ This Python package provides a machine learning model for predicting the likelih
 
 You can install the package using pip:
 
-    pip install short-activist-pred
+    pip install short-activists-pred
 
 ### Usage
 

@@ -1,8 +1,8 @@
 ===================
-short-activist-pred
+short-activists-pred
 ===================
 
-This is the documentation of **short-activist-pred**.
+This is the documentation of **short-activists-pred**.
 
 .. note::
 

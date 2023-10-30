@@ -6,8 +6,8 @@ from setuptools import setup, find_packages
 if __name__ == "__main__":
     try:
         setup(
-            name='short-activist-pred',
-            version='1.0.0',
+            name='short-activists-pred',
+            version='1.0.1',
             packages=find_packages(exclude=['tests*']),
             license='GPL-3.0',
             description='Short activists prediction',
@@ -24,7 +24,7 @@ if __name__ == "__main__":
                 "huggingface_hub>=3.0.4",
                 "pwinput>=1.0.3",
             ],
-            url='https://github.com/DanGlChris/short-activist-pred',
+            url='https://github.com/DanGlChris/short-activists-pred',
             author='Daglox Kankwanda',
             author_email='dagloxkankwenda@gmail.com'
         )

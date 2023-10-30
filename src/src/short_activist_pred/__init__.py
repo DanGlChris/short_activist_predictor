@@ -18,9 +18,9 @@ else:
 
 try:
     # Change here if project is renamed and does not equal the package name
-    dist_name = "short-activist-pred"
+    dist_name = "short-activists-pred"
     __version__ = version(dist_name)
 except PackageNotFoundError:  # pragma: no cover
-    __version__ = "1.0.0"
+    __version__ = "1.0.1"
 finally:
     del version, PackageNotFoundError
