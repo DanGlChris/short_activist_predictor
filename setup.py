@@ -2,9 +2,14 @@
     # Copyright 2023 DanGlChris (Daglox Kankwanda). All rights reserved.
 """
 from setuptools import setup, find_packages
+import os
+def clean():
+    """Remove build directory and its contents."""
+    os.system('rm -rf build')
 
 if __name__ == "__main__":
     try:
+
         setup(
             name='short-activists-pred',
             version='1.0.1',
@@ -26,7 +31,9 @@ if __name__ == "__main__":
             ],
             url='https://github.com/DanGlChris/short-activists-pred',
             author='Daglox Kankwanda',
-            author_email='dagloxkankwenda@gmail.com'
+            author_email='dagloxkankwenda@gmail.com',
+            cmdclass={'clean': clean},
+
         )
     except:  # noqa
         print(
