@@ -264,5 +264,5 @@ class Predictor:
 
     @staticmethod
     def Login_Token():
-        _token = pwinput("Enter your token here : ", "*")
+        _token = pwinput("Enter your hugging face token here : ", "*")
         return _token

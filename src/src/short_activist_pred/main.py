@@ -12,7 +12,7 @@ from predictor import Predictor
 
 
 if __name__ == '__main__':
-    # Create a predictor instance by token indentification
+    # Create a predictor instance by hf token indentification
     predictor_ = Predictor(Predictor.Login_Token())
 
     # Upload the report in pdf format
