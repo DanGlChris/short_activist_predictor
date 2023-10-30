@@ -11,16 +11,16 @@ if __name__ == "__main__":
             packages=find_packages(exclude=['tests*']),
             license='MIT',
             description='Short activists prediction',
-            long_description=open('README.md').read(),
+            long_description=open('README.rst').read(),
             install_requires=[
                 'bertopic>=0.15.0',
-                'pdfplumber>=0.10.2'
+                'pdfplumber>=0.10.2',
                 'numpy>=1.20.0',
                 'pandas>=1.1.5',
                 'matplotlib>=3.1.7',
                 're',
                 'string',
-                'nltk>=3.8.1'
+                'nltk>=3.8.1',
                 'wordcloud>=1.9.2',
                 'tkinter',
                 'transformers>=4.34.0',
