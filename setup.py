@@ -11,7 +11,7 @@ if __name__ == "__main__":
     try:
         setup(
             name='short_activist_predictor',
-            version='1.0.1',
+            version='1.0.2',
             package_dir={"": "src"},
             packages=find_packages(where="short_activist_predictor"),
             license='GPL-v3.0',
@@ -43,7 +43,7 @@ if __name__ == "__main__":
             ],
             cmdclass= {'clean': clean},
             zip_safe=False,
-            egg_base='.',
+            egg_base='./src',
 
         )
     except:  # noqa

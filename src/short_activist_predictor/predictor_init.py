@@ -8,7 +8,7 @@
 # ---------------------------------------------------------------
 
 import pandas as pd
-import owner
+from . import owner
 
 from bertopic import BERTopic
 from huggingface_hub import login, hf_hub_download

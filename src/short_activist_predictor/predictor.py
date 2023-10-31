@@ -1,6 +1,6 @@
-from predictor_init import Predictor_init
-import Filter
-import sys
+from . import predictor_init
+from . import Filter
+from . import sys
 
 import numpy as np
 import os
@@ -25,7 +25,7 @@ class Predictor:
         # Configuration system
         os.environ["HF_HUB_DISABLE_CACHE"] = "1"
 
-        self.predictor_in: Predictor_init = Predictor_init(token_=token) # generate new predictor module
+        self.predictor_in: predictor_init.Predictor_init = predictor_init.Predictor_init(token_=token) # generate new predictor module
         self.predictor_in.load_all_models()
         self.predictor_in.load_data()
         self.predictor_in.upload_data()
