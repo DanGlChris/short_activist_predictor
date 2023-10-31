@@ -1,4 +1,4 @@
-short-activists-pred
+Short activist predictor
 ===================
 ## Note
 
@@ -18,7 +18,7 @@ The package provides a `Predictor` module with function `predict_pdf()` that tak
 Here's an example of how to use the `Predictor.predict_pdf()` function:
 
 ``` python    
-from predictor import Predictor
+from short_activist_predictor.predictor import Predictor
 
 # Create a predictor instance by hf token indentification
 predictor_ = Predictor(Predictor.Login_Token())

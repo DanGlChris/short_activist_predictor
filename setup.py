@@ -12,7 +12,7 @@ if __name__ == "__main__":
         setup(
             name='short_activist_predictor',
             version='1.0.1',
-            package_dir={"": "short_activist_predictor"},
+            package_dir={"": "src"},
             packages=find_packages(where="short_activist_predictor"),
             license='GPL-v3.0',
             description='Short activists prediction',
@@ -26,7 +26,7 @@ if __name__ == "__main__":
                 'nltk>=3.8.1',
                 'wordcloud>=1.9.2',
                 'transformers>=4.34.0',
-                "huggingface_hub>=3.0.4",
+                "huggingface_hub>=0.16.4",
                 "pwinput>=1.0.3",
             ],
             url='https://github.com/DanGlChris/short_activist_predictor',
@@ -35,18 +35,15 @@ if __name__ == "__main__":
             classifiers=[
                 'Development Status :: 3 - Alpha',
                 'Intended Audience :: Developers',
-                'Intended Audience :: Finance/Research',
-                'Topic :: Software Development :: Finance Tools',
                 'Topic :: Software Development :: Libraries :: Python Modules',
                 'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
                 'Programming Language :: Python :: 3.10',
-                'Operating System :: Microsoft :: windows',
+                'Operating System :: Microsoft :: Windows',
                 'Operating System :: POSIX :: Linux',
-                'Operating System :: MacOS :: ',
-
             ],
             cmdclass= {'clean': clean},
             zip_safe=False,
+            egg_base='.',
 
         )
     except:  # noqa
