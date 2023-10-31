@@ -1,6 +1,6 @@
-from . import predictor_init
+from . import predictor_init, Filter
 from . import Filter
-from . import sys
+import sys
 
 import numpy as np
 import os
@@ -264,5 +264,5 @@ class Predictor:
 
     @staticmethod
     def Login_Token():
-        _token = pwinput("Enter your hugging face token here : ", "*")
+        _token = input("Enter your hugging face token here : ")
         return _token
