@@ -116,7 +116,7 @@ class Predictor_init:
         full_model_path = owner.path_on_hugging_face + model_path
 
         topic_model = BERTopic.load(full_model_path)
-        print(f"successfully loaded the model {model_path}")
+        #print(f"successfully loaded the model {model_path}")
         return topic_model
 
     def load_all_models(self):

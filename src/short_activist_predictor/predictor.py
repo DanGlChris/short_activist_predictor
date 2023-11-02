@@ -249,11 +249,16 @@ class Predictor:
 
     ## Method to use on Google Colab. Exclusive!!
     def __upload_file_gc(self):
-        uploaded = files.upload()
-        for fn in uploaded.keys():
-            print('User uploaded file "{name}" with length {length} bytes'.format(
-                name=fn, length=len(uploaded[fn])))
-        return fn  # return the filename
+        try:
+            print("\nUpload a report here (PDF): ")
+            uploaded = files.upload()
+            for fn in uploaded.keys():
+                continue
+            return fn  # return the filename
+
+        except (FileNotFoundError,UnboundLocalError) :
+            print("Cancel uploading report")
+            sys.exit()
 
     def __pdf_to_text(self, file_path):
         with pdfplumber.open(file_path) as pdf:

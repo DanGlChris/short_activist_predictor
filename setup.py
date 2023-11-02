@@ -11,7 +11,7 @@ if __name__ == "__main__":
     try:
         setup(
             name='short_activist_predictor',
-            version='1.0.0c0',
+            version='1.0.0c1',
             package_dir={"": "src"},
             packages=find_packages(where="short_activist_predictor"),
             license='GPL-v3.0',
