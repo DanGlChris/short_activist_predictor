@@ -7,8 +7,19 @@
 # Copyright: All rights reserved
 # ---------------------------------------------------------------
 
+import os
+# Configuration system
+is_notebook = False
+try:
+    if 'google.colab' in str(get_ipython()): # get_ipython can be executed on google colab by default
+        is_notebook = True
+        from . import owner
+except:
+    # others cloud-based notebooks will be integrated soon...
+    import owner
+
+
 import pandas as pd
-from . import owner
 
 from bertopic import BERTopic
 from huggingface_hub import login, hf_hub_download

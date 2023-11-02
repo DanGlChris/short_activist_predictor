@@ -11,7 +11,7 @@ if __name__ == "__main__":
     try:
         setup(
             name='short_activist_predictor',
-            version='1.0.0',
+            version='1.0.0c0',
             package_dir={"": "src"},
             packages=find_packages(where="short_activist_predictor"),
             license='GPL-v3.0',
@@ -27,7 +27,6 @@ if __name__ == "__main__":
                 'wordcloud>=1.9.2',
                 'transformers>=4.34.0',
                 "huggingface_hub>=0.16.4",
-                "pwinput>=1.0.3",
             ],
             url='https://github.com/DanGlChris/short_activist_predictor',
             author='Daglox Kankwanda',

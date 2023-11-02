@@ -1,17 +1,38 @@
-from . import predictor_init, Filter
-from . import Filter
-import sys
+# ---------------------------------------------------------------
+# Project Name: short-activist-report
+# Created by: Daglox Kankwanda
+# Username: DanGlChris
+# Creation Date: October 21, 2023
+#
+# Copyright: All rights reserved
+# ---------------------------------------------------------------
 
-import numpy as np
 import os
+# Configuration system
+is_notebook = False
+try:
+    if 'google.colab' in str(get_ipython()): # get_ipython can be executed on google colab by default
+        is_notebook = True
+        from . import predictor_init, Filter, owner
+        import getpass
+        from google.colab import drive, files # Do not need to install google.colab when the code is executed on google colab
+except:
+    # others cloud-based notebooks will be integrated soon...
+    is_notebook = False
+    import predictor_init, Filter, owner
+
+import sys
+import numpy as np
 import pdfplumber
 
-#from google.colab import drive, files
 from tkinter.filedialog import askopenfilename
 from builtins import staticmethod
+import matplotlib
 from pwinput import pwinput
+matplotlib.use('Agg')
 
 class Predictor:
+
     A_ = "Status First Day Low"
     B_ = "Status First Day Close"
     C_ = "Status First Week"
@@ -22,7 +43,7 @@ class Predictor:
 
     def __init__(self, token: str):
 
-        # Configuration system
+        # system configuration
         os.environ["HF_HUB_DISABLE_CACHE"] = "1"
 
         self.predictor_in: predictor_init.Predictor_init = predictor_init.Predictor_init(token_=token) # generate new predictor module
@@ -113,6 +134,11 @@ class Predictor:
         data4_ = data4_[data4_[['Research firm', 'Target']].apply(tuple, axis=1).isin(final_list)]
 
         return [data4_, Data__low]'''
+    def is_notebook(self):
+        return self.is_notebook
+
+    def set_is_notebook(self, value):
+        self.is_notebook = value
 
     # this function return topic probability
     # topic_model refer to the BERTtopic model
@@ -222,6 +248,13 @@ class Predictor:
             print("Cancel uploading report")
             sys.exit()
 
+    ## Method to use on Google Colab. Exclusive!!
+    def __upload_file_gc(self):
+        uploaded = files.upload()
+        for fn in uploaded.keys():
+            print('User uploaded file "{name}" with length {length} bytes'.format(
+                name=fn, length=len(uploaded[fn])))
+        return fn  # return the filename
 
     def __pdf_to_text(self, file_path):
         with pdfplumber.open(file_path) as pdf:
@@ -236,8 +269,13 @@ class Predictor:
 
     # Use the functions
     def Upload_pdf(self):
-        pdf_file_path = self.__upload_file()
-        text = self.__pdf_to_text(pdf_file_path)
+        global is_notebook
+        self.pdf_file_path = ""
+        if is_notebook:
+            self.pdf_file_path = self.__upload_file_gc()
+        else:
+            self.pdf_file_path = self.__upload_file()
+        text = self.__pdf_to_text(self.pdf_file_path)
         return text
 
     ## Here I check if there are failed element in our succeed list
@@ -264,5 +302,10 @@ class Predictor:
 
     @staticmethod
     def Login_Token():
-        _token = input("Enter your hugging face token here : ")
+        global is_notebook
+        _token = ""
+        if is_notebook:
+            _token = getpass.getpass(owner.Text_entry_token)
+        else :
+            _token = input(owner.Text_entry_token)
         return _token

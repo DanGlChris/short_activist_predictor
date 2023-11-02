@@ -13,7 +13,7 @@ pip install short_activist_predictor
 ```
 ### Usage
 
-The package provides a `Predictor` module with function `predict_pdf()` that takes in a path to the PDF file of the short report and the target company name. It loads and analyzes the report text using NLP. The Predictor then outputs probability scores between 0-1 predicting the chance of a successful outcome from the report release over 3 time periods - within 3 days, 1 week, and 1 month.
+The package provides a `Predictor` module with function `predict_pdf()` that takes in a path to the PDF file of the short report and the target company name. It loads and analyzes the report text using NLP. The Predictor then outputs probability scores between 0-1 predicting the chance of a successful outcome from the report release over 3 time periods - within 1 days, 1 week, and 1 month.
 
 Here's an example of how to use the `Predictor.predict_pdf()` function:
 
@@ -36,14 +36,8 @@ To request access, please email danglchis.manage@gmail.com with your name, insti
 To use this package, you need to have Python 3.10 or higher installed on your system. You also need to have the following packages installed:
 
    - Bertopic
-   - Pdfplumber
-   - Numpy
-   - Pandas
-   - Matplotlib
-   - Wordcloud
    - Transformers
    - Huggingface_hub
-   - Pwinput
    - NLTK
 
 ### License
