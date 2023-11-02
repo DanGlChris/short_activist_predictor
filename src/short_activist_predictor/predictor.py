@@ -28,7 +28,6 @@ import pdfplumber
 from tkinter.filedialog import askopenfilename
 from builtins import staticmethod
 import matplotlib
-from pwinput import pwinput
 matplotlib.use('Agg')
 
 class Predictor:

@@ -8,12 +8,12 @@
 # ---------------------------------------------------------------
 print("Loading modules...")
 
-from . import predictor
+from predictor import Predictor
 
 
 if __name__ == '__main__':
     # Create a predictor instance by hf token indentification
-    predictor_ = predictor.Predictor(predictor.Predictor.Login_Token())
+    predictor_ = Predictor(Predictor.Login_Token())
 
     # Upload the report in pdf format
     # This following function will ask you to upload a pdf to
